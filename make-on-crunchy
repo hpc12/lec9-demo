@@ -1,0 +1,3 @@
+#! /bin/sh
+DEBUG_FLAGS="-I$HOME/pack/numactl-2.0.8 -L$HOME/pack/numactl-2.0.8" make
+

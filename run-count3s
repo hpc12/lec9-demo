@@ -1,0 +1,7 @@
+#! /bin/bash
+
+NCPUS=$(grep processor /proc/cpuinfo | wc -l)
+
+for i in $(seq $NCPUS); do
+  OMP_NUM_THREADS=$i ./count3s
+done

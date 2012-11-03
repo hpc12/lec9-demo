@@ -2,7 +2,7 @@ EXECUTABLES = \
 	      mpi-bandwidth mpi-bi-bandwidth mpi-latency \
 	      register-pressure.o aliasing.o \
 	      alignment \
-	      numa-test count3s
+	      numa-test count3s lock-contention
 
 all: $(EXECUTABLES)
 
@@ -20,6 +20,9 @@ numa-test: numa-test.c
 
 count3s: count3s.c
 	gcc -O0 -std=gnu99 -fopenmp $(DEBUG_FLAGS) -lrt -o$@ $^
+
+lock-contention: lock-contention.c
+	gcc -O0 -std=gnu99 -fopenmp $(DEBUG_FLAGS) -lrt -lm -o$@ $^
 
 mpi%: mpi%.c
 	mpicc -std=gnu99 $(DEBUG_FLAGS) -lrt -o$@ $^

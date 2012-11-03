@@ -63,5 +63,5 @@ int main()
 #define DO2 \
       x = sin(x);
 
-      DO2 DO2 DO2 DO2  DO2 DO2 DO2 DO2
+      DO2 DO2 DO2 DO2 DO2  DO2 DO2 DO2 DO2 DO2
       */

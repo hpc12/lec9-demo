@@ -25,7 +25,7 @@ prg = cl.Program(ctx, """//CL//
       loc[li] = 0;
 
       for (int j = 0; j < 1000; ++j)
-        loc[ARGUMENT * li] += loc[li];
+        loc[li] += loc[ARGUMENT * li];
     }
 
     """.replace("myarg", sys.argv[1])).build()

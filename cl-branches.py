@@ -11,12 +11,10 @@ mf = cl.mem_flags
 a = cl.array.zeros(queue, n, np.float32)
 
 prg = cl.Program(ctx, """//CL//
-    #define OP(x) x
-
     kernel void choices(global float *a)
     {
       int i = get_global_id(0);
-      switch (i % 1)
+      switch (i % 32)
       {
         case 0: a[i] = 32;
         case 1: a[i] = 0;
@@ -68,6 +66,7 @@ for i in xrange(ntrips):
     prg.choices(queue, a.shape, (256,), a.data)
 queue.finish()
 t2 = time()
-print " M entries per sec: %g" % (ntrips*n/(t2-t1)*1e-6)
+print "M entries per sec: %g" % (ntrips*n/(t2-t1)*1e-6)
 
 # vim: filetype=pyopencl
+

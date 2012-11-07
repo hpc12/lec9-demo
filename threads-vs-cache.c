@@ -46,5 +46,3 @@ int main()
   free(array);
   return 0;
 }
-
-// BAD: if-inside-of-for

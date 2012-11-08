@@ -1,8 +1,7 @@
 EXECUTABLES = \
-	      mpi-bandwidth mpi-bi-bandwidth mpi-latency \
 	      register-pressure.o aliasing.o \
 	      alignment \
-	      numa-test threads-vs-cache lock-contention
+	      threads-vs-cache
 
 all: $(EXECUTABLES)
 
